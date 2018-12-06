@@ -1,6 +1,5 @@
 import {FETCH_PLAYERS} from './constants';
 
-
 const isFetchProducts= action=>{
 	return action.type===FETCH_PLAYERS;
 }

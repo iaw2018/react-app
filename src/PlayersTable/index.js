@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel} from 'react-bootstrap';
+import { Table} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import SelectedPlayersSelector	from './selector';
 
