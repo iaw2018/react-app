@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Navbar, Grid, Row, Col } from 'react-bootstrap';
+import SearchBar  from './SearchBar';
+import PlayerTable from './PlayerTable';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Navbar inverse staticTop>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <h4>Site Title</h4>
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+
+        <h4 className="desciptionApp ml-4"> Football Player Finder </h4>
+        <SearchBar />
+        <PlayerTable />        
+
       </div>
     );
   }
