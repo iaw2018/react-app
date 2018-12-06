@@ -6,6 +6,7 @@ import './playersTable.css';
 
 const PlayersTable = (props) => {
   return (
+    <div>
       <Table striped bordered  >
       	<thead>
       		<tr>
@@ -16,8 +17,8 @@ const PlayersTable = (props) => {
       		</tr>
       	</thead>
         <tbody>
-          {props.players.map(player =>
-            <tr key={player.id}>
+          {props.players.map((player,index) =>
+            <tr key= {"player"+index}>
               <td>{player.name}</td>
               <td className="">{player.position}</td>
               <td className="">{player.nationality}</td>
@@ -26,6 +27,7 @@ const PlayersTable = (props) => {
           )}
         </tbody>
       </Table>
+  </div>
   )
 }
 const mapStateToProps= state => {

@@ -1,16 +1,21 @@
-import React from 'react';
+import React ,{Component} from 'react';
 import { Form,FormGroup,FormControl, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
+import * as actions from './actions';
 import './searchBar.css';
 
-const SearchBar = (props) => {
-  return (
+class SearchBar extends Component{
+  render()
+  {
+    return (
       <Form inline>
           <FormGroup controlId="formName">
-              <FormControl type="text" placeholder="Player Name" className="filterField"/>
+              <FormControl type="text" placeholder="Player Name" 
+              className="filterField" onChange={this.props.doNewName}/>
           </FormGroup>
           <FormGroup controlId="formPosition">
-              <FormControl componentClass="select" placeholder="Position" className="filterField">
+              <FormControl componentClass="select" placeholder="Position" 
+              className="filterField" onChange={this.props.doNewPosition}>
                 <option value="Position">Position</option>
                 <option value="Attacking Midfield">Attacking Midfield</option>
                 <option value="Central Midfield">Central Midfield</option>
@@ -25,16 +30,21 @@ const SearchBar = (props) => {
               </FormControl>
           </FormGroup>
           <FormGroup controlId="formAge">
-              <FormControl type="text" placeholder="Age" className="filterField"/>
+              <FormControl type="text" placeholder="Age" 
+              className="filterField" onChange={this.props.doNewAge}/>
           </FormGroup>
           <FormGroup controlId="formAge">
-              <Button type="submit" className="filterField" bsSize="large">Search</Button>
+              <Button type="submit" 
+              className="filterField" 
+              bsSize="large">
+                Search
+              </Button>
           </FormGroup>
       </Form>
-  )
+  );  
+}
 }
 const mapStateToProps= state => {
-  return {filtros:state.filters};
-}
-
-export default connect(mapStateToProps)(SearchBar);
+    return {filters:state.filters};
+  }
+export default connect(mapStateToProps,actions)(SearchBar);
