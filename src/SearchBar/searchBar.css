@@ -1,0 +1,15 @@
+.form-inline .form-group{
+	width: 25%;
+}
+.form-inline .form-control .filterField{
+	width: 95%;
+}
+.form-inline .form-control{
+	width: 95%;
+}
+.form-inline .btn-default{
+	width: 95%;
+}
+.form-inline{
+	margin-bottom: 10px;	
+}

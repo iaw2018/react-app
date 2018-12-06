@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import store from './store';
 import {Provider} from 'react-redux';
+import {loadPlayers} from './PlayersTable/actions';
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 import * as serviceWorker from './serviceWorker';
 
+
+store.dispatch(loadPlayers());
 ReactDOM.render(
 	<Provider store={store}>
   		<App />

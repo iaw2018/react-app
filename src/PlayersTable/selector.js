@@ -7,16 +7,17 @@ const validName= (player,filterName)=>{
 	return (filterName===undefined) || (player===filterName);
 };
 const validPosition= (player,filterPosition)=>{
-	return (filterName===undefined) || (player===filterName);
+	return (filterPosition===undefined) || (player===filterPosition);
 };
 
 const validAge= (player,filterAge)=>{
-	return (filterName===undefined) || (player===filterName);
+	return (filterAge===undefined) || (player===filterAge);
 }
 const selectedPlayer= (player,filters)=>{
-	return  validName(player.name,filters.name) 
-			&& validPosition(player.position,filters.position)
-			&& validAge(player.age,filters.age);
+	return  true;
+	//validName(player.name,filters.name) 
+	//		&& validPosition(player.position,filters.position)
+	//		&& validAge(player.age,filters.age);
 };
 const getPlayers= (players,filters) =>{
 	const selectedPlayers= _.filter(players,player => {
