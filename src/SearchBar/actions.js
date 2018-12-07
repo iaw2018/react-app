@@ -3,7 +3,7 @@ const {DO_SEARCH} = constants;
 const getValues= values=>{
 	let filters={};
 	if(values.age)
-		filters.age=values.age;
+		filters.age=Number(values.age);
 	if(values.position)
 		filters.position=values.position;
 	if(values.name)
