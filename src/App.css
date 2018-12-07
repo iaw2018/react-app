@@ -30,9 +30,20 @@
 
 #Brand{
   margin:0px;
+  float: none;
+}
+#appDescription{
+  padding-top: 70px;
+}
+#rowTable{
+  padding-top: 20px;
 }
 .table-bordered > thead > tr > th {
   text-align: center;
   background-color: rgba(100,100 , 100, 1);
     color: white;
 }
+.container > .navbar-header{
+    float: none;
+}
+  

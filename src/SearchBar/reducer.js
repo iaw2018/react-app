@@ -1,40 +1,33 @@
 import * as constants from './constants';
-const {NEW_NAME, NEW_POSITION,NEW_AGE,DO_SEARCH} = constants;
+const {NEW_NAME, NEW_POSITION,NEW_AGE,DO_SEARCH,DEFAULTS_FILTERS,DEFAULT_AGE} = constants;
 
-const initialState={
-	name:"",
-	position:"Position",
-	age:""
-};
 const checkFilters= filters=>{
 	console.log(filters);
 	return filters;
 }
 const doNewName= (state,value) =>{
-	
-	console.log("estado",{
-		...state,
-		name:value
-	});
-	return{
-		...state,
+	return{	...state,
 		name:value
 	};
 }
 const doNewPosition= (state,value) =>{
-	return{
-		...state,
+	return{	...state,
 		position:value
 	};
 }
+const calculateAgeValue= value=>{
+	if(value!=="")
+		return parseInt(value);
+	return DEFAULT_AGE;
+};
+
 const doNewAge= (state,value) =>{
-	return{
-		...state,
-		age:value
+	return{	...state,
+		age: calculateAgeValue(value)
 	};
 }
 
-const filters = (state =initialState,action) =>{
+const filters = (state =DEFAULTS_FILTERS,action) =>{
 	switch(action.type){
 		case NEW_NAME: 		return doNewName(state,action.value);
 		case NEW_POSITION: 	return doNewPosition(state,action.value); 

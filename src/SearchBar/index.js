@@ -2,38 +2,34 @@ import React ,{Component} from 'react';
 import { Form,FormGroup,FormControl, Button} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import * as actions from './actions';
+import {DEFAULTS_FILTERS} from './constants';
 import './searchBar.css';
 
+const positions=[DEFAULTS_FILTERS.position,"Attacking Midfield",
+  "Central Midfield","Centre-Back","Centre-Forward","Defensive Midfield",
+  "Keeper","Left Midfield","Left Wing","Left-Back","Right-Back"];
 class SearchBar extends Component{
   render()
   {
     return (
       <Form inline>
-          <FormGroup controlId="formName">
+          <FormGroup controlId="formName" className="col-md-3 col-xs-12">
               <FormControl type="text" placeholder="Player Name" 
               className="filterField" onChange={this.props.doNewName}/>
           </FormGroup>
-          <FormGroup controlId="formPosition">
+          <FormGroup controlId="formPosition" className="col-md-3 col-xs-12">
               <FormControl componentClass="select" placeholder="Position" 
               className="filterField" onChange={this.props.doNewPosition}>
-                <option value="Position">Position</option>
-                <option value="Attacking Midfield">Attacking Midfield</option>
-                <option value="Central Midfield">Central Midfield</option>
-                <option value="Centre-Back">Centre-Back</option>
-                <option value="Centre-Forward">Centre-Forward</option>
-                <option value="Defensive Midfield">Defensive Midfield</option>
-                <option value="Keeper">Keeper</option>
-                <option value="Left Midfield">Left Midfield</option>
-                <option value="Left Wing">Left Wing</option>
-                <option value="Left-Back">Left-Back</option>
-                <option value="Right-Back">Right-Back</option>
+                {positions.map(position =>
+                  <option value={position}>{position}</option>
+                )}
               </FormControl>
           </FormGroup>
-          <FormGroup controlId="formAge">
+          <FormGroup controlId="formAge" className="col-md-3 col-xs-12">
               <FormControl type="text" placeholder="Age" 
               className="filterField" onChange={this.props.doNewAge}/>
           </FormGroup>
-          <FormGroup controlId="formAge">
+          <FormGroup controlId="formAge" className="col-md-3 col-xs-12">
               <Button type="submit" 
               className="filterField" 
               bsSize="large">
@@ -47,4 +43,5 @@ class SearchBar extends Component{
 const mapStateToProps= state => {
     return {filters:state.filters};
   }
+export {DEFAULTS_FILTERS};
 export default connect(mapStateToProps,actions)(SearchBar);

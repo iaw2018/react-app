@@ -21,7 +21,7 @@ const PlayersTable = (props) => {
             <tr key= {"player"+index}>
               <td>{player.name}</td>
               <td className="">{player.position}</td>
-              <td className="">{player.nationality}</td>
+              <td className="">{player.team}</td>
               <td className="">{player.age}</td>
             </tr>
           )}

@@ -1,7 +1,15 @@
 import {FETCH_PLAYERS} from './constants';
+import getAge from 'get-age';
 
 const formatPlayers=(players)=>{
-	return players; // TODO: transform  age and delete additional information
+	return players.map(player=> {
+		return{
+			name:player.name,
+			position:player.position,
+			team:player.nationality,
+			age:getAge(player.dateOfBirth)
+		};
+	});
 }
 const players = (state =[],action) =>{
 	switch(action.type){
