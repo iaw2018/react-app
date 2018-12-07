@@ -1,5 +1,4 @@
 import {createSelector} from 'reselect';
-import  _ from 'lodash'
 import {DEFAULTS_FILTERS} from '../SearchBar'
 
 const playerSelector= state => state.players;
@@ -23,7 +22,7 @@ const selectedPlayer= (player,filters)=>{
 			&& selectedAge(player.age,filters.age);
 };
 const getPlayers= (players,filters) =>{
-	const selectedPlayers= _.filter(players,player => {
+	const selectedPlayers= players.filter(player => {
 		return selectedPlayer(player,filters);
 	});
 	return selectedPlayers;

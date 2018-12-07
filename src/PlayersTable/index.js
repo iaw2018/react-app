@@ -5,7 +5,7 @@ import SelectedPlayersSelector	from './selector';
 import 'react-table/react-table.css'
 import './playersTable.css';
 
-  const columns = [
+const columns = [
   {    Header: 'Name',    accessor: 'name' ,      headerClassName:'HeaderTable'  }, 
   {    Header: 'Position',accessor: 'position' ,  headerClassName:'HeaderTable'  },
   {    Header: 'Team',    accessor: 'team',       headerClassName:'HeaderTable'  }, 
