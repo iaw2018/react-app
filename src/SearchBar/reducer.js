@@ -2,18 +2,13 @@ import * as constants from './constants';
 const {NEW_NAME, NEW_POSITION,NEW_AGE,DO_SEARCH,DEFAULTS_FILTERS,DEFAULT_AGE} = constants;
 
 const checkFilters= filters=>{
-	console.log(filters);
 	return filters;
 }
 const doNewName= (state,value) =>{
-	return{	...state,
-		name:value
-	};
+	return {...state, name:value };
 }
 const doNewPosition= (state,value) =>{
-	return{	...state,
-		position:value
-	};
+	return {...state,position:value };
 }
 const calculateAgeValue= value=>{
 	if(value!=="")
@@ -22,9 +17,7 @@ const calculateAgeValue= value=>{
 };
 
 const doNewAge= (state,value) =>{
-	return{	...state,
-		age: calculateAgeValue(value)
-	};
+	return{	...state, age: calculateAgeValue(value)};
 }
 
 const filters = (state =DEFAULTS_FILTERS,action) =>{

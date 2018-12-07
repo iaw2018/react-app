@@ -2,8 +2,6 @@ import {createSelector} from 'reselect';
 import  _ from 'lodash'
 import {DEFAULTS_FILTERS} from '../SearchBar'
 
-
-
 const playerSelector= state => state.players;
 const filtersSelector= state=>state.filters;
 
