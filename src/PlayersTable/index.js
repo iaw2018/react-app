@@ -1,34 +1,27 @@
 import React from 'react';
-import {Table} from 'react-bootstrap';
+import ReactTable from 'react-table'
 import {connect} from 'react-redux';
 import SelectedPlayersSelector	from './selector';
+import 'react-table/react-table.css'
 import './playersTable.css';
 
+  const columns = [
+  {    Header: 'Name',    accessor: 'name' ,      headerClassName:'HeaderTable'  }, 
+  {    Header: 'Position',accessor: 'position' ,  headerClassName:'HeaderTable'  },
+  {    Header: 'Team',    accessor: 'team',       headerClassName:'HeaderTable'  }, 
+  {    Header: 'Age',     accessor: 'age',        headerClassName:'HeaderTable'  }];
+
 const PlayersTable = (props) => {
-  return (
-    <div>
-      <Table striped bordered  >
-      	<thead>
-      		<tr>
-      			<th>Player</th>
-      			<th>Position</th>
-      			<th>Team</th>
-      			<th>Age</th>
-      		</tr>
-      	</thead>
-        <tbody>
-          {props.players.map((player,index) =>
-            <tr key= {"player"+index}>
-              <td>{player.name}</td>
-              <td className="">{player.position}</td>
-              <td className="">{player.team}</td>
-              <td className="">{player.age}</td>
-            </tr>
-          )}
-        </tbody>
-      </Table>
-  </div>
-  )
+  return(
+
+    <ReactTable className="-striped reactTable"
+    data={props.players}
+    columns={columns}
+    showPagination={false}
+    minRows={0}
+  />
+  );
+
 }
 const mapStateToProps= state => {
   return {players:SelectedPlayersSelector(state)};

@@ -1,5 +1,8 @@
-.table-bordered > thead > tr > th .tableHeader{
+.HeaderTable{
 	text-align: center;
 	background-color: rgba(100,100 , 100, 1);
     color: white;
+}
+.reactTable{
+	margin-bottom: 20px;
 }
