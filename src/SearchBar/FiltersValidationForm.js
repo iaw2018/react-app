@@ -2,7 +2,6 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import {POSITIONS} from  './constants'
 
-
 const validate = values => {
   const errors = {}
   if (!(/^[a-z]+$/i.test(values.name))) {
@@ -50,8 +49,7 @@ const FiltersForm = props => {
     </form>
   )
 }
-
 export default reduxForm({
-  form: 'syncValidation', // a unique identifier for this form
-  validate, // <--- validation function given to redux-form
+  form: 'syncValidation',
+  validate, 
 })(FiltersForm)

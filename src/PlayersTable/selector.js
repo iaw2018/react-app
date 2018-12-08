@@ -16,16 +16,15 @@ const selectedPosition= (player,filterPosition)=>{
 const selectedAge= (player,filterAge)=>{
 	return (filterAge===DEFAULTS_FILTERS.age) || (player===filterAge);
 }
-const selectedPlayer= (player,filters)=>{
-	return 	selectedName(player.name,filters.name) 
-			&& selectedPosition(player.position,filters.position)
-			&& selectedAge(player.age,filters.age);
+const selectedPlayer= (player,{name,position,age})=>{
+	return 	selectedName(player.name,name) 
+			&& selectedPosition(player.position,position)
+			&& selectedAge(player.age,age);
 };
 const getPlayers= (players,filters) =>{
-	const selectedPlayers= players.filter(player => {
+	return players.filter(player => {
 		return selectedPlayer(player,filters);
 	});
-	return selectedPlayers;
 };
 export default createSelector(
 	playerSelector, 	//a piece of state

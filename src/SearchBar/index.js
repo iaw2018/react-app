@@ -5,15 +5,11 @@ import * as actions from './actions';
 import {DEFAULTS_FILTERS} from './constants';
 import './searchBar.css';
 
-
-
 class SearchBar extends Component{
-  render()
-  {
+  render(){
     return ( 
       <FiltersForm onSubmit={this.props.doSearch} />
-  );  
-}
+  );}
 }
 const mapStateToProps= state => {
     return {filters:state.filters};

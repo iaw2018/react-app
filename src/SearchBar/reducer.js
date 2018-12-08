@@ -1,14 +1,10 @@
-import * as constants from './constants';
-const {DO_SEARCH,DEFAULTS_FILTERS} = constants;
-
-const checkFilters= filters=>{
-	return filters;
-}
+import {DO_SEARCH,DEFAULTS_FILTERS} from './constants';
 const filters = (state =DEFAULTS_FILTERS,action) =>{
 	switch(action.type){
-		case DO_SEARCH: 	return checkFilters(action.filters);
-		default:break;
+		case DO_SEARCH: 	
+			return action.filters;
+		default:
+			return state;
 	}
-	return state;
 };
 export default filters;

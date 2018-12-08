@@ -13,9 +13,10 @@ const formatPlayers=(players)=>{
 }
 const players = (state =[],action) =>{
 	switch(action.type){
-		case FETCH_PLAYERS: return formatPlayers(action.players);
-		default:break;
+		case FETCH_PLAYERS: 
+			return formatPlayers(action.players);
+		default:
+			return state;
 	}
-	return state;
 };
 export default players;
