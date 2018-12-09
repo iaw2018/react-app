@@ -21,7 +21,7 @@ const selectedPlayer= (player,{name,position,age})=>{
 			&& selectedPosition(player.position,position)
 			&& selectedAge(player.age,age);
 };
-const getPlayers= (players,filters) =>{
+export const getPlayers= (players,filters) =>{
 	return players.filter(player => {
 		return selectedPlayer(player,filters);
 	});

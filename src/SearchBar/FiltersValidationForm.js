@@ -36,15 +36,14 @@ const renderSelect = ({input,  label}) =>
       </select>
     </div>
 )
-const FiltersForm = props => {
-  const { handleSubmit, submitting } = props
+const FiltersForm = ({ handleSubmit})  => {
   return (
     <form onSubmit={handleSubmit}>
       <Field  name="name" type="text" component={renderField} label="Player Name"/>
       <Field name="position" component={renderSelect} label="Position" className="col-md-3 col-xs-12" />
       <Field name="age" type="number" component={renderField} label="Age" />
       <div className="col-md-3 col-xs-12 divSearch">
-        <button className="itemSearch btn btn-default" type="submit" disabled={submitting}>Submit</button>
+        <button className="itemSearch btn btn-default" type="submit">Search</button>
     </div>
     </form>
   )

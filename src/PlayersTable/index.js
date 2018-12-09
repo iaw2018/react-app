@@ -11,14 +11,14 @@ const columns = [
   {    Header: 'Team',    accessor: 'team',       headerClassName:'HeaderTable'  }, 
   {    Header: 'Age',     accessor: 'age',        headerClassName:'HeaderTable'  }];
 
-const PlayersTable = (props) => {
+export const PlayersTable = ({players}) => {
   return(
 
     <ReactTable className="-striped reactTable"
-    data={props.players}
+    data={players}
     columns={columns}
     showPagination={false}
-    minRows={0}
+    minRows={0} 
   />
   );
 

@@ -1,9 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import {shallow,render,configure} from 'enzyme'; 
+import store from './store';
+import {Provider} from 'react-redux';
+import Adapter from 'enzyme-adapter-react-15';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+configure({ adapter: new Adapter() });
+
+it('shallows App without crashing', () => {
+  shallow(<App />);
+ });
+
+ it('renders App without crashing', () => {
+  render(
+	<Provider store={store}>
+  		<App />
+  	</Provider>);
+ });
+
