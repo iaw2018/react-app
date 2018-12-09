@@ -7,7 +7,7 @@ import moxios from 'moxios';
 
 const mockStore=configureStore([thunk]);
 beforeEach(()=>moxios.install());
-afterEach(()=>moxios.unistall());
+afterEach(()=>moxios.uninstall());
 
 it('load Players',()=>{
 	moxios.stubRequest(PLAYERS_URL,{
