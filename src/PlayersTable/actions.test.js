@@ -1,5 +1,6 @@
 import {loadPlayers} from './actions';
 import {PLAYERS_URL,FETCH_PLAYERS} from './constants';
+import {DEFAULTS_FILTERS} from '../SearchBar'
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import moxios from 'moxios';
@@ -10,6 +11,7 @@ beforeEach(()=>moxios.install());
 afterEach(()=>moxios.uninstall());
 
 it('load Players',()=>{
+	const store= mockStore({players:[],filters:DEFAULTS_FILTERS});
 	moxios.stubRequest(PLAYERS_URL,{
 		status:200,
 		response:[ 
